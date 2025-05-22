@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin-bottom: 2rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+input[type="submit"] {
+  padding: 0.4rem 0.8rem;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="submit"]:hover {
+  background-color: #3e9e44;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  max-width: 500px;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Specific styling for the "Add Item" header */
+form h3 {
+  font-size: 1.4rem; /* Slightly larger for emphasis */
+  color: #4CAF50;    /* Green for the "Add Item" header */
+  margin-bottom: 1rem; /* Bigger space below */
+}
+
+/* Specific styling for the "To Do" header */
+div h3 {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase; /* To give it a clean, structured feel */
+  letter-spacing: 1px;       /* Slight spacing for a more modern look */
+  margin-bottom: 0.5rem;
 }
