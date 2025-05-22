@@ -1,8 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Form() {
   const [item, setItem] = useState("");
   const [items, setItems] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    const savedItems = localStorage.getItem("todo-items");
+    if (savedItems){
+      setItems(JSON.parse(savedItems));
+    }
+    setHasLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (hasLoaded){
+      localStorage.setItem("todo-items", JSON.stringify(items));
+    }
+  }, [items, hasLoaded]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,7 +95,7 @@ export default function Form() {
           </ul>
         )}
       </div>
-      
+
       <hr style={{ margin: "2rem 0", border: "none", borderTop: "1px solid #ccc" }} />
     
       <div>
