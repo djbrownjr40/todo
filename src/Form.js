@@ -30,6 +30,9 @@ export default function Form() {
     setItems(items.filter((item) => item.id !== idToDelete));
   };
 
+  const toDoItems = items.filter((item) => !item.completed);
+  const doneItems = items.filter((item) => item.completed);
+
   return (
     <>
       <div>
@@ -46,11 +49,47 @@ export default function Form() {
       <div>
         <h3>To Do</h3>
 
-        {items.length === 0 ? (
+        {toDoItems.length === 0 ? (
           <p>Nothing to see here! ✨</p>
         ) : (
           <ul>
-            {sortedItems.map((todo) => (
+            {toDoItems.map((todo) => (
+              <li key={todo.id}>
+                <div className="todo-item">
+                <span
+                 style={{
+                  textDecoration: todo.completed ? "line-through" : "none",
+                }}
+                >
+                    <input
+                      type="checkbox"
+                      checked={todo.completed}
+                      onChange={() => toggleDone(todo.id)}
+                    />
+                    {todo.text}
+                  </span>
+                  <button
+                    className="delete-button"
+                    onClick={() => deleteItem(todo.id)}
+                  >
+                    X
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      
+      <hr style={{ margin: "2rem 0", border: "none", borderTop: "1px solid #ccc" }} />
+    
+      <div>
+        <h3>Done</h3>
+        {doneItems.length === 0 ? (
+          <p>Get busy! 👏🏼</p>
+        ) : (
+          <ul>
+            {doneItems.map((todo) => (
               <li key={todo.id}>
                 <div className="todo-item">
                 <span
