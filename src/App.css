@@ -1,4 +1,3 @@
-/* App.css */
 
 body {
   font-family: Arial, sans-serif;
@@ -8,11 +7,21 @@ body {
   color: #333;
 }
 
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
 form {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  max-width: 400px;
+  max-width: 600px;
   margin-bottom: 2rem;
   align-items: center;
 }
@@ -62,19 +71,38 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-/* Specific styling for the "Add Item" header */
 form h3 {
-  font-size: 1.4rem; /* Slightly larger for emphasis */
-  color: #4CAF50;    /* Green for the "Add Item" header */
-  margin-bottom: 1rem; /* Bigger space below */
+  font-size: 1.4rem; 
+  color: #4CAF50;    
+  margin-bottom: 1rem; 
 }
 
-/* Specific styling for the "To Do" header */
 div h3 {
   font-size: 1.4rem;
   color: #333;
   font-weight: bold;
-  text-transform: uppercase; /* To give it a clean, structured feel */
-  letter-spacing: 1px;       /* Slight spacing for a more modern look */
+  text-transform: uppercase; 
+  letter-spacing: 1px;
   margin-bottom: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: #f44336; /* Reddish */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
 }
